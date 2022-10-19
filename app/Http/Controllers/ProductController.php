@@ -39,6 +39,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email|unique:products',
             'detail' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg,gif,svg|max:2048'
         ]);
@@ -87,6 +88,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email',
             'detail' => 'required',
         ]);
         $update = $request->all();
